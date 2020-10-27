@@ -1,0 +1,56 @@
+{
+  "name": "stockero",
+  "version": "1.0.0",
+  "description": "photostock manager",
+  "main": "main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "stokero.lpzcode.xyz",
+    "asar": true,
+    "extraFiles": [
+      "store.json",
+      "settings.json",
+      "exiftool.exe",
+      "simpleFTP.exe"
+    ],
+    "win": {
+      "icon": "build/ico.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "lpzcode",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^4.0.0",
+    "dialogs": "^2.0.1",
+    "image-thumbnail": "^1.0.8",
+    "json-2-csv": "^3.6.2",
+    "node-exiftool": "^2.3.0",
+    "open": "^7.0.3",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-builder": "^22.4.1"
+  }
+}

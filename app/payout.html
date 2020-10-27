@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Buy AI Package</title>
+      <link rel="stylesheet" href="css/index.css">
+      <style>
+          nav h1{
+              color: #f0f0f0;
+              padding-top: 5px;
+          }
+          .in{
+              width: calc(100% - 10px);
+          }
+          p{
+            color: #f0f0f0;
+          }
+          .medium{
+              width: calc(100% - 115px);
+          }
+          .btnMax{
+              float: none;
+              margin-right: 5px;
+              border-radius: 4px;
+          }
+          #viewList{
+              background-color: #21252B;
+              width: calc(100% - 10px);
+              height: 200px;
+              border-radius: 8px;
+              margin-top: 40px;
+              margin-left: 5px;
+              padding: 5px;
+              overflow: auto;
+          }
+          .stiker{
+              background-color: #21252B;
+              padding: 5px;
+              margin: 5px;
+              height: 30px;
+              border-radius: 15px;
+              text-align: center;
+              cursor: pointer;
+          }
+          .stiker b{
+              padding: 10px;
+              background-color: #21252B;
+              color: #f0f0f0;
+              border-radius: 50%;
+              float: right;
+          }
+      </style>
+    </head>
+    <body>
+      <div id="app">
+          <nav>
+            <center><h1>price U$10</h1></center>
+          </nav>
+          <br>
+          <br>
+          <div id="viewList">
+            <p>Purchase a package of 1500 images for tagging using artificial intelligence for only U$10.</p>
+            <br>
+            <p>These packages are cumulative.</p>
+          </div>
+          <br>
+          <br>
+          <center>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="4S5ZYC56GXJUU">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </center>         
+      </div>
+    </body>
+  </html>

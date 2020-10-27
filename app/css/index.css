@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'Sen';
+    src: url('../fonts/Sen-Regular.ttf');
+}
+:root{
+    --main-primary-color: rgb(28, 31, 44);
+    --main-secundary-color: rgb(24, 26, 37);
+    --main-font: #f0f0f0;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Sen', sans-serif;
+    user-select: none;
+}
+body{
+    background-color: var(--main-primary-color);
+    overflow: hidden;
+}
+#frame{
+    width: 100%;
+    height: 50px;
+    background-color: var(--main-secundary-color);
+    padding: 5px;
+    padding-left: 15px;
+    color: var(--main-font);
+}
+#frame i{
+    float: right;
+    font-size: 28px;
+    padding: 8px;
+}
+#frame i:hover{
+    cursor: pointer;
+    color: tomato;
+}
+nav{
+    background-color: var(--main-secundary-color);
+    width: 200px;
+    height: calc(100vh - 50px);
+    display: inline-block;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+}
+nav ul li{
+    background-color: var(--main-secundary-color);
+    float: left;
+    color: var(--main-font);
+    padding: 10px;
+    padding-top: 12px;
+    width: 100%;
+    font-weight: 500;
+}
+#btn-extras{
+    margin-right: 10px;
+}
+nav ul li:hover{
+    cursor: pointer;
+    background-color: var(--main-primary-color);
+}
+#app{
+    background-color: var(--main-primary-color);
+    overflow: hidden;
+    width: calc(100% - 210px);
+    display: inline-block;
+}
+.active i{
+    color: tomato;
+}
+.page{
+    width: calc(100% - 210px);
+    height: calc(100vh - 55px);
+    position: absolute;
+    display: none;
+    background-color: var(--main-primary-color);
+    overflow: hidden;
+}
+#main{
+    display: block;
+}
+#main footer b{
+    color: #3767B1;
+}
+#creatorMedia{
+    cursor: pointer;
+}
+.space{
+    width: 100%;
+    height: 40px;
+}
+.mainSpace{
+    width: 100%;
+    height: 100px;
+}
+.mainPanel{
+    padding: 5px;
+    width: 200px;
+    height: 340px;
+    background-color: var(--main-secundary-color);
+    color: #f0f0f0;
+    display: inline-table;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+}
+.mainPanel img{
+    width: 100px;
+    height: auto;
+    transform: scale(0.8);
+}
+.mainPanel h3{
+    color: #3767B1;
+}
+#app button,
+.calendar,
+.btnKeyword{
+    background-color: var(--main-secundary-color);
+    padding: 5px;
+    color: #f0f0f0;
+    outline: none;
+    border: 1px solid #f0f0f0;
+    margin: 5px;
+    margin-right: 0px;
+    cursor: pointer;
+    height: 26px;
+    font-size: 10px;
+}
+.btnKeyword{
+    text-align: center;
+    width: 45px;
+    border-radius: 4px;
+    height: 42px;
+    font-size: 25px;
+    display: inline-block;
+}
+.btnKeywordLarge{
+    width: 95px;
+}
+.calendar{
+    background-color: #f0f0f0;
+    color: #21252B;
+}
+#app .right{
+    float: right;
+    margin-right: 10px;
+}
+#app #btn-imstocker{
+    background-color: #3767B1;
+}
+#app #btn-deepl{
+    background-color: tomato;
+}
+#app #btn-uploadFTP{
+    background-color: #3767B1;
+    margin-top: -3px;
+    float: right;
+}
+#imagesContainer{
+    overflow: auto;
+    width: 100%;
+    height: calc(100vh - 140px);
+}
+#uploadList{
+    width: 100%;
+    min-height: calc(100% - 90px);
+    padding: 10px;
+    color: #f0f0f0;
+}
+#uploads label{
+    color: #f0f0f0;
+    margin-left: 5px;
+}
+#uploads hr{
+    margin-bottom: 10px;
+}
+.uploadBox{
+    background-color: #21252B;
+    border-radius: 8px;
+    width: calc(50% - 20px);
+    height: 200px;
+    overflow: hidden;
+    padding: 5px;
+    float: left;
+    margin: 10px;
+}
+.contentTable{
+    width: calc(100% - 30px);
+    background-color: var(--main-secundary-color);
+    border-radius: 4px;
+    margin: 15px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+.contentTable thead tr{
+    color: #FF6161;
+    background-color: var(--main-secundary-color);
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.contentTable tr td,
+.contentTable tr th{
+    padding: 5px;
+    border-bottom: 1px solid var(--main-secundary-color);
+}
+.contentTable tr td{
+    color: #f0f0f0;
+}
+.contentTable tbody tr{
+    border-bottom: 1px solid var(--main-secundary-color);
+}
+.contentTable tbody tr td img{
+    width: 28px;
+    height: 28px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.contentTable tbody tr td:first img{
+    float: right;
+}
+.uploadBox ul{
+    width: 100%;
+    min-height: 100px;
+    overflow: auto;
+}
+.uploadBox .information{
+    cursor: pointer;
+    float: right;
+    margin-right: 5px;
+}
+.uploadBox .information:hover{
+    transform: scale(1.1);
+    transition: 0.6s;
+}
+.uploadBox .span{
+    width: max-content;
+    display: inline-block;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 2px;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+.uploadBox h4{
+    color: #FF6161;
+}
+#agencyList{
+    width: 100%;
+    height: 40px;
+    background-color: var(--main-secundary-color);
+    padding: 8px;
+}
+#agencyList h3{
+    color: #FF6161;
+}
+.boxImage{
+    background-color: var(--main-secundary-color);
+    border-left: 4px solid #3767B1;
+    width: calc(100% - 20px);
+    height: 120px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.photo{
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url('../img/fondo-curso-viajes.jpg');
+    background-position: center;
+    background-size: cover;
+    border: 4px solid #21252B;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #f0f0f0;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size:10px;
+}
+
+.in{
+    height: 40px;
+    width: calc(48% - 120px);
+    outline: none;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 5px;
+}
+.ta{
+    float: right;
+    height: 90px;
+    width: calc(40% - 50px);
+    margin-right: 20px;
+}
+.rightPanel{
+    width: 100px;
+    height: 90px;
+    float: right;
+}
+#app .btnMax{
+    height: 40px;
+    width: 110px;
+    border-radius: 8px;
+    float: right;
+    padding: 0px;
+}
+#app .h90{
+    height: 90px;
+}
+#app .red{
+    background-color: #FF6161;
+}
+#app .blue{
+    background-color: #3767B1;
+}
+#app .green{
+    background-color: #3CB371;
+}
+#app .gold{
+    background-color: #FFA500;
+}
+.ftpInfo{
+    width: 200px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: calc(50% - 100px);
+    text-align: center;
+    color: #FF6161;
+}
+.ftpInfo img{
+    width: 150px;
+    height: auto;
+    margin: 25px;
+    transition: 1s;
+}
+.uploading{
+    position: absolute;
+    animation-name: 'moving';
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+#chart{
+    max-height: 400px;
+}
+.scrolling{
+    width: calc(100% + 20px);
+    height: calc(100% - 64px);
+    overflow: scroll;
+    background-color: var(--main-primary-color);
+}
+.colorizedButonsBar{
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.colorized{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    color: #f0f0f0;
+}
+.colorizedButton{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #21252B;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 50px;
+    color: #21252B;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.colorizedButton:hover,
+.iactive{
+    background-color: #3767B1;
+    border-color: #f0f0f0;
+    color: #f0f0f0;
+}
+footer{
+    width: 100%;
+    height: 20px;
+    background-color: var(--main-secundary-color);
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+}
+footer p{
+    font-size: 0.6em;
+    color: #f0f0f0;
+}
+@keyframes moving{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.4);}
+    100% {transform: scale(1);}
+  }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>ELIMINAR</title>
+      <link rel="stylesheet" href="css/sweetalert2.min.css">
+      <link rel="stylesheet" href="css/index.css">
+      <style>
+          nav h1{
+              color: #f0f0f0;
+              padding-top: 5px;
+          }
+          .in{
+              width: calc(100% - 10px);
+          }
+          .medium{
+              width: calc(100% - 140px);
+          }
+          #app .btnMax{
+              float: none;
+              margin-right: 5px;
+              border-radius: 4px;
+          }
+          #viewList{
+              background-color: #21252B;
+              width: calc(100% - 10px);
+              height: 200px;
+              border-radius: 8px;
+              margin-top: 40px;
+              margin-left: 5px;
+              padding: 5px;
+              overflow: auto;
+          }
+          .stiker{
+              background-color: #21252B;
+              padding: 5px;
+              margin: 5px;
+              height: 30px;
+              border-radius: 15px;
+              text-align: center;
+              cursor: pointer;
+          }
+          .stiker b{
+              padding: 10px;
+              background-color: #21252B;
+              color: #f0f0f0;
+              border-radius: 50%;
+              float: right;
+          }
+      </style>
+    </head>
+    <body>
+      <div id="app">
+          <div id="frame">
+            <h1>SELECCIONAR</h1>
+          </div>
+          <br>
+          <br>
+        <select id="folder" class="in medium">
+        </select>
+        <button class="btnMax blue" id="btn-add">ELIMINAR</button>
+      </div>
+      <script src="js/loadingOverlay.min.js"></script>
+      <script src="js/sweetalert2.all.min.js"></script>
+      <script>
+          const { ipcRenderer, remote } = require('electron');
+          const $ = el => document.querySelector(el);
+          const colors = ['#FF5733','#CD5C5C','#DC143C','#C71585','#FF7F50','#FF8C00','#FFD700','#BDB76B','#BA55D3','#7B68EE','#00FA9A','#3CB371','#66CDAA','#20B2AA','#B0E0E6','#D2B48C','#CD853F','#C0C0C0','#D2691E','#6B8E23'];
+          $('#app').style.height = (window.innerHeight)+'px';
+          $('#app').style.width = (window.innerWidth)+'px';
+          var agencies;
+          var selected = [];
+          function existSelected(id){
+              let exist = false;
+              for(let i=0;i<selected.length;i++){
+                  if(selected[i].id == id){
+                      exist = true;
+                  }
+              }
+              return exist;
+          }
+          function randomColor(){
+              return colors[Math.floor(Math.random() * colors.length)];
+          }
+          ipcRenderer.on('select_agencies',(e,data)=>{
+              agencies = data;
+              for(let i=0;i<data.length;i++){
+                  let option = document.createElement('option');
+                  option.value = data[i].id;
+                  option.innerText = data[i].name;
+                  $('#folder').append(option);
+              }
+            });
+            $('#btn-add').addEventListener('click',e=>{
+                let agency = $('#folder').value;
+                for(let i=0;i<agencies.length;i++){
+                    if(agencies[i].id == agency){
+                        if(!existSelected(agency)){
+                            ipcRenderer.send('agenciesToDalete',agencies[i]);
+                            alert('Agencia eliminada!');
+                        }
+                    }
+                }
+            });
+      </script>
+    </body>
+  </html>

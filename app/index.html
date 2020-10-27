@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>stockero</title>
+      <link rel="stylesheet" type="text/css" href="css/all.min.css">
+      <link rel="stylesheet" href="css/sweetalert2.min.css">
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/Chart.min.css">
+    </head>
+    <body>
+      <div id="frame">
+        <i class="fas fa-times" id="btn-closeWindow"></i>
+        <i class="fas fa-minus" id="btn-minimizeWindow"></i>
+        <h1>STOCKERO</h1>
+      </div>
+      <nav>
+        <ul class="bclear">
+          <li id="btn-keywording" class="bclear"><i class="fas fa-hashtag"></i>  ETIQUETADO</li>
+          <li id="btn-ftp" class="bclear"><i class="fas fa-upload"></i>  FTP</li>
+          <li id="btn-uploads" class="bclear"><i class="fas fa-angle-double-up"></i>  SUBIDAS</li>
+          <li id="btn-extras" class="bclear"><i class="fas fa-tools"></i>  AJUSTES</li>
+          <li id="btn-main" class="bclear"><i class="fas fa-mobile-alt"></i>  EXTRAS</li>
+        </ul>
+      </nav>
+      <div id="app">
+        <div class="page" id="main">
+          <div class="mainSpace"></div>
+          <center>
+            <!--
+            <div class="mainPanel" id="btn-openFolder">
+              <img src="img/magnifying-glass.png">
+              <div class="space"></div>
+              <h3>OPEN FOLDER</h3>
+              <div class="space"></div>
+              <p>search the images you want to tag or upload by ftp</p>
+            </div>
+            -->
+            <div class="mainPanel" id="btn-blockRename">
+              <img src="img/photo.png">
+              <div class="space"></div>
+              <h3>RENOMBRAR BLOQUE</h3>
+              <div class="space"></div>
+              <p>Selecciona múltiples imágenes y renombra la secuencia definida.</p>
+            </div>
+            <div class="mainPanel" id="btn-mrApp">
+              <img src="img/iphone.png">
+              <div class="space"></div>
+              <h3>APP STOCKERO MR</h3>
+              <div class="space"></div>
+              <br>
+              <p>Descargue la aplicación gratuita para android y cree sus contratos modelo.</p>
+            </div>
+            <div class="mainPanel" id="btn-donation">
+              <img src="img/money.png">
+              <div class="space"></div>
+              <h3>DONACIÓN</h3>
+              <div class="space"></div>
+              <br>
+              <p>Apoyar este proyecto con una donación a través de paypal.</p>
+            </div>
+          </center>
+          <footer>
+            <p id="creatorMedia">Icons made by <b>smashicons</b> from <b>flaticon.com</b></p>
+          </footer>
+        </div>
+        <div class="page" id="ftp">
+          <button id="btn-uploadList" title="Listado de agencias a subir"><i class="fas fa-address-book"></i> DONDE SUBIR</button>
+          <button id="btn-addAgency" title="Agregar nueva agencia"><i class="fas fa-user-plus"></i> AGREGAR AGENCIA</button>
+          <button id="btn-deleteAgency" title="Eliminar agencia existente"><i class="fas fa-user-minus"></i> ELIMINAR AGENCIA</button>
+          <button id="btn-uploadVideo" class="red" title="Selecciona videos a subir"><i class="fas fa-video"></i> SUBIR VIDEO</button>
+          <div id="agencyList">
+            <button id="btn-uploadFTP" title="Subir archivos por FTP"><i class="fas fa-chevron-circle-up"></i> SUBIR</button>
+            <h3 id="aToUpload">AGENCIAS A SUBIR: 0</h3>
+          </div>
+          <div class="ftpInfo">
+            <img src="img/miscellaneous.png" id="img-ftp">
+            <br>
+            <h1 id="indicatorUpload">LISTO</h1>
+          </div>
+          <footer>
+            <p id="ftpIndicator">exito:0 error:0</p>
+          </footer>
+        </div>
+        <div class="page" id="keywording">
+          <button id="btn-openFolder2" title="Abrir archivos"><i class="fas fa-file-image"></i>  ABRIR IMAGENES</button>
+          <button id="btn-selectAllFiles" title="Seleccionar todos los archivos"><i class="fas fa-mouse-pointer"></i> SELECCIONAR TODO</button>
+          <button id="btn-saveSelected" title="Guardar archivos Seleccionados"><i class="fas fa-save"></i> GUARDAR SELECCIONADOS</button>
+          <button id="btn-uploadSelected" title="Subir archivos selecionados"><i class="fas fa-upload"></i> SUBIR SELECCIONADO</button>
+          <button id="btn-aiKeywording" title="Etiquetado con inteligencia artificial">ETIQUETADO IA</button>
+          <button id="btn-imstocker" title="Abrir ventana imstocker"><i class="fas fa-tags"></i> IMSTOCKER</button>
+          <button id="btn-deepl" title="Abrir ventana traductor deepl"><i class="fas fa-language"></i> DEEPL</button>
+          <!-- <button id="btn-aiCounter" class="right red">200 Images</button> -->
+          <div class="space"></div>
+          <div id="imagesContainer">
+          </div>
+        </div>
+        <div class="page" id="uploads">
+          <label>MES: </label>
+          <select id="in-mount" class="calendar">
+            <option value="01">ENERO</option>
+            <option value="02">FEBRERO</option>
+            <option value="03">MARZO</option>
+            <option value="04">ABRIL</option>
+            <option value="05">MAYO</option>
+            <option value="06">JUNIO</option>
+            <option value="07">JULIO</option>
+            <option value="08">AGOSTO</option>
+            <option value="09">SEPTIEMBRE</option>
+            <option value="10">OCTUBRE</option>
+            <option value="11">NOVIEMBRE</option>
+            <option value="12">DICIEMBRE</option>
+          </select>
+          <label>AÑO: </label>
+          <input type="number" id="in-year" min="2000" max="3000" class="calendar" value="2020">
+          <button id="btn-filterUploads" title="Filtrar datos"><i class="fas fa-search"></i> FILTRAR</button>
+          <button id="btn-viewAllUploads" title="Ver todos los registros de un año"><i class="fas fa-eye"></i> VER TODO</button>
+          <button id="btn-csv" class="right" title="Exportar archivo CSV"><i class="fas fa-file-export"></i> CSV</button>
+          <button id="btn-viewMoney" class="blue right" title="Sesiones con mejores ingresos"><i class="fas fa-chart-line"></i> RENDIMIENTO</button>
+          <button id="btn-viewRegister" class="blue right" title="Registrar subida de forma manual"><i class="fas fa-server"></i> REGISTRAR</button>
+          <div class="space"></div>
+          <div class="scrolling">
+            <canvas id="chart"></canvas>
+            <div class="space"></div>
+            <table class="contentTable">
+              <thead>
+                <tr>
+                  <th>$</th>
+                  <th>ARCHIVOS</th>
+                  <th>SESIÓN</th>
+                  <th>FECHA</th>
+                  <th>HORA</th>
+                  <th>AGENCIAS</th>
+                </tr>
+              </thead>
+              <tbody id="tableSessions">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="page" id="extras">
+          <div class="colorizedButonsBar">
+            <!-- workspac button-->
+            <div class="colorized">
+              <div class="colorizedButton iactive" id="btn-iworkspace" title="Crea una copia organizada de tus fotos subidas por FTP">
+                <i class="fas fa-folder"></i>
+              </div>
+              <p>ESPACIO DE TRABAJO</p>
+            </div>
+            <!-- dark theme button-->
+            <div class="colorized">
+              <div class="colorizedButton iactive" id="btn-changeTheme" title="Activa o desactiva el tema oscuro en la aplicación">
+                <i class="fas fa-fill-drip"></i>
+              </div>
+              <p>TEMA OSCURO</p>
+            </div>
+            <!-- tips button-->
+            <div class="colorized">
+              <div class="colorizedButton" id="btn-tips" title="Crea una copia de seguridad de tus registros de subidas (no incluye archivos de imagen)">
+                <i class="fas fa-database"></i>
+              </div>
+              <p>COPIA DE SEGURIDAD</p>
+            </div>
+            <!-- updates button-->
+            <div class="colorized">
+              <div class="colorizedButton" title="Buscar actualizaciones" id="btn-update">
+                <i class="fas fa-angle-double-up"></i>
+              </div>
+              <p>BUSCAR ACTUALIZACIONES</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="js/loadingOverlay.min.js"></script>
+      <script src="js/counterImages.js"></script>
+      <script src="js/Chart.min.js"></script>
+      <script src="js/sweetalert2.all.min.js"></script>
+      <script src="js/functions.js"></script>
+      <script src="js/events.js"></script>
+    </body>
+  </html>

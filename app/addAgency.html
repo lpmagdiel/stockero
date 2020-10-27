@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>AGREGAR</title>
+      <link rel="stylesheet" href="css/sweetalert2.min.css">
+      <link rel="stylesheet" href="css/index.css">
+      <style>
+          nav h1{
+              color: #f0f0f0;
+              padding-top: 5px;
+          }
+          .in{
+              width: calc(100% - 10px);
+          }
+          .medium{
+              width: calc(100% - 140px);
+          }
+          #app .btnMax{
+              float: none;
+              margin-right: 5px;
+              border-radius: 4px;
+          }
+      </style>
+    </head>
+    <body>
+      <div id="app">
+          <div id="frame">
+            <h1>LLENAR DATOS</h1>
+          </div>
+          <br>
+          <br>
+        <input type="text" placeholder="AGENCIA" class="in" id="nameFTP">
+        <input type="text" placeholder="SERVIDOR FTP" class="in" id="serverFTP">
+        <input type="number" placeholder="PUERTO FTP" class="in" value="21" id="portFTP">
+        <input type="text" placeholder="USUARIO" class="in" id="userFTP">
+        <input type="password" placeholder="CONTRASEÑA" class="in" id="passFTP">
+        <select id="folder" class="in medium">
+            <option value="ROOT">ROOT</option>
+        </select>
+        <button class="btnMax blue" id="btn-conection">CONECTAR</button>
+        <br>
+        <br>
+        <br>
+        <center>
+            <button class="btnMax red" id="btn-saveData">GUARDAR</button>
+        </center>
+      </div>
+      <script src="js/loadingOverlay.min.js"></script>
+      <script src="js/sweetalert2.all.min.js"></script>
+      <script src="js/ftpGestions.js"></script>
+      <script src="js/addAgency.js"></script>
+    </body>
+  </html>
