@@ -3,37 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/index.css">
     <title>stockero</title>
 </head>
 <body>
-    <div class="header-container">
-        <header>
-            <h1>stockero</h1>
-            <p>Tu sofrware de etiquetado y control de subidas.</p>
-            <button class="btn btn-white" id="btn_donation">Donación</button>
-            <button class="btn" id="btn_download">Descargar</button>
-        </header>
-        <div class="b-left"></div>
-        <div class="b-right"></div>
-    </div>
-    
-    <section>
-        <article>
-            <section>
-                <h2>Caracteristicas</h2>
-            </section>
-            <section>
-                <h2>Galeria</h2>
-            </section>
-            <section>
-                <h2>¿Que hay de nuevo?</h2>
-            </section>
-            <section>
-                <h2>Ver codigo en GitHub</h2>
-            </section>
-        </article>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img src="img/icon.png" height="28">
+          </a>
+      
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light" href="https://github.com/lpmagdiel/stockero" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <strong>&nbsp;GitHub</strong>
+                  
+                </a>
+                <a class="button is-info" href="https://www.paypal.com/paypalme/MagdielL" target="_blank">
+                    <i class="fab fa-paypal"></i>
+                    <strong>&nbsp;Donation</strong>
+                  
+                </a>
+                <a class="button is-primary" href="https://www.dropbox.com/s/a6gbtht7q34jfoe/stockero_1.2.0.zip?dl=0" target="_blank">
+                    <i class="fas fa-cloud-download-alt"></i>
+                    <strong>&nbsp;Download</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <header class="hero is-light">
+        <div class="hero-body has-text-centered">
+            <h1 class="title">stockero</h1>
+            <p>your image tagging and session upload control software.</p>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura1.PNG" alt="">
+                    </a>
+                </div>
+                <div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura1_2.PNG" alt="">
+                    </a>
+                </div>
+                <div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura2.PNG" alt="">
+                    </a>
+                </div>
+                <div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura3.PNG" alt="">
+                    </a>
+                </div><div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura4.PNG" alt="">
+                    </a>
+                </div>
+                <div class="column is-4">
+                    <a href="#">
+                        <img src="img/Captura5.PNG" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="subtitle">Actual version: <b>1.2.0</b></h2>
+            <a class="button is-primary" href="https://www.dropbox.com/s/a6gbtht7q34jfoe/stockero_1.2.0.zip?dl=0" target="_blank">
+                <i class="fas fa-cloud-download-alt"></i>
+                <strong>&nbsp;Download</strong>
+            </a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-text-centred">Features</h2>
+            <div class="colums">
+                <div class="list">
+                    <ul>
+                        <div class="list-item">
+                            <li>Easy translation of titles and descriptions from spanish to english.</li>
+                        </div>
+                        <div class="list-item">
+                            <li>Integrated FTP client with help to speed up the upload process.</li>
+                        </div>
+                        <div class="list-item">
+                            <li>Help to create titles in editorial format.</li>
+                        </div>
+                        <div class="list-item">
+                            <li>Session upload control and help graphics.</li>
+                        </div>
+                        <div class="list-item">
+                            <li>Easily rename photo sets for a better organization of the session.</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header class="hero is-dark">
+        <div class="hero-body has-text-centered">
+            <h2 class="title">Thank's</h2>
+            <p>Help me support this project by inviting me to a cup of coffee: <a href="https://www.paypal.com/paypalme/MagdielL" target="_blank" class="has-text-danger">donation</a></p>
+        </div>
+    </header>
     <script src="js/index.js"></script>
 </body>
 </html>

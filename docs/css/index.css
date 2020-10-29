@@ -3,6 +3,9 @@
     font-family: 'Releway';
     src: url('../fonts/Raleway-Regular.ttf');
 }
+:root{
+
+}
 *{
     padding: 0px;
     margin: 0px;
@@ -15,13 +18,7 @@
     overflow: hidden;
 }
 header{
-    background-color: #7148E4;
     background-image: url("../img/bg.png");
-    width: 100%;
-    height: 100%;
-    color: white;
-    text-align: center;
-    padding-top: 20vh;
 }
 .b-left{
     width: 200px;
@@ -65,4 +62,27 @@ section{
     min-height: 400px;
     margin-top: 80px;
     text-align: center;
+    padding: 10px;
+}
+.bg{
+    background-image: url("../img/bg.png");
+    color: white;
+}
+.bg-gray{
+    background-color: #fafafa;
+}
+.bg-red{
+    background-color: tomato;
+}
+.bg-blue{
+    background-color: #3767B1;
+}
+.list ul {
+    display: inline-flex;
+    flex-direction: column;
+    list-style: square;
+  }
+  
+.list ul li {
+    text-align: left;
 }

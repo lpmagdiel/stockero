@@ -1,25 +1,25 @@
-/*  generic funcions     */
-function $(el){
-    let out;
-    switch (Array.from(el)[0]) {
-        case '.':
-            out = document.getElementsByClassName(el.slice(1));
-            break;
-        case '#':
-            out = document.getElementById(el.slice(1));
-            break;
-        default:
-            out = document.getElementsByTagName(el);
-            break;
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+  
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+  
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+  
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+  
+        });
+      });
     }
-    return out;
-}
-function $click(el,fx){
-    $(el).addEventListener('click',fx);
-}
-$click('#btn_donation',e=>{
-    window.open("https://paypal.me/MagdielL", "_blank");
-});
-$click('#btn_download',e=>{
-    window.open("https://www.dropbox.com/s/a6gbtht7q34jfoe/stockero_1.2.0.zip?dl=0", "_blank");
-});
+  
+  });
